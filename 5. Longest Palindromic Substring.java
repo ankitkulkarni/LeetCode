@@ -1,17 +1,17 @@
 public class Solution {
     public String longestPalindrome(String s) {
-        String temporaryString = "";
+        String palindrome = "";
         for(int i = 0; i < s.length(); i++){
-            String string = checkOnBothSides(s, i, i);
-            if(string.length() > temporaryString.length()){
-                temporaryString = string;
+            String temp1 = checkOnBothSides(s, i, i);
+            if(temp1.length() > palindrome.length()){
+                palindrome = temp1;
             }
-            String string2 = checkOnBothSides(s, i, i + 1);
-            if(string2.length() > temporaryString.length()){
-                temporaryString = string2;
+            String temp2 = checkOnBothSides(s, i, i + 1);
+            if(temp2.length() > palindrome.length()){
+                palindrome = temp2;
             }
         }
-        return temporaryString;
+        return palindrome;
     }
     public String checkOnBothSides(String str, int start, int end){
         while(start >= 0 && end <= str.length() - 1 && str.charAt(start) == str.charAt(end)){

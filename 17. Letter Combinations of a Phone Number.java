@@ -18,3 +18,24 @@ public class Solution {
         return result;
     }
 }
+
+public class Solution {
+    public List<String> letterCombinations(String digits) {
+        LinkedList<String> result = new LinkedList<>();
+        if(digits.length() == 0){
+            return result;
+        }
+        String[] mappingOfDigitsToCharacters = new String[]{"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        result.add("");
+        for(int i = 0; i < digits.length(); i++){
+            int number = digits.charAt(i) - '0';
+            while(result.peek().length() == i){
+                String temp = result.remove();
+                for(char c: mappingOfDigitsToCharacters[number].toCharArray()){
+                    result.add(temp + c);
+                }
+            }
+        }
+        return result;
+    }
+}

@@ -3,12 +3,12 @@ public class Solution{
         if (x < 0){
             return false;
         }
-        int rev = 0;
+        int reversedNumber = 0;
         int temp = x;
         while (temp != 0){
-    	    rev = (rev * 10) + (temp % 10);
+    	    reversedNumber = (reversedNumber * 10) + (temp % 10);
     	    temp = temp / 10;
         }
-        return (x == rev) ? true : false;
+        return (x == reversedNumber) ? true : false;
     }
 }

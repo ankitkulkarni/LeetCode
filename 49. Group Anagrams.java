@@ -5,9 +5,9 @@ public class Solution {
         }
         HashMap<String, List<String>> hm = new HashMap<>();
         for(String s : strs){
-            char c[] = s.toCharArray();
+            char[] c = s.toCharArray();
             Arrays.sort(c);
-            String keyString = String.valueOf(c);
+            String keyString = String.valueOf(c); //String keyString = new String(c);
             if(!hm.containsKey(keyString)){
                 hm.put(keyString, new ArrayList<String>());
             }
