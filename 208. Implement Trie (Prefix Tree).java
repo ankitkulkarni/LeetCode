@@ -45,12 +45,7 @@ public class Trie {
                 return false;
             }
         }
-        if(p.isLeaf){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return p.isLeaf;
     }
 
     // Returns if there is any word in the trie
