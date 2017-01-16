@@ -36,11 +36,10 @@ public class Solution {
     }
     
     ListNode diffNodeOfLongerList(ListNode list, int k){
-        ListNode current = list;
-        while(k > 0 && current != null){
-            current = current.next;
+        while(k > 0 && list != null){
+            list = list.next;
             k--;
         }
-        return current;
+        return list;
     }
 }

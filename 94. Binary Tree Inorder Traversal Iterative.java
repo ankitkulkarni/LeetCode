@@ -8,18 +8,20 @@
  * }
  */
 public class Solution {
-    public ArrayList<Integer> inorderTraversal(TreeNode root) {
-        ArrayList<Integer> result = new ArrayList<>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
         Deque<TreeNode> stack = new LinkedList<>();
-        TreeNode current = root;
-        while(current != null || !stack.isEmpty()){
-            while(current != null){
-                stack.offerFirst(current);
-                current = current.left;
+        TreeNode node = root;
+        while(!stack.isEmpty() || node != null){
+            if(node != null){
+                stack.offerFirst(node);
+                node = node.left;
             }
-            current = stack.pollFirst();
-            result.add(current.val);
-            current = current.right;
+            else{
+                node = stack.poll();
+                result.add(node.val);
+                node = node.right;
+            }
         }
         return result;
     }
