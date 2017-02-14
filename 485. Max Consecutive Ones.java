@@ -4,13 +4,12 @@ public class Solution {
         while(i < nums.length){
             if(nums[i] == 1){
                 count++;
-                i++;
             }
             else{
                 max = max > count ? max : count;
                 count = 0;
-                i++;
             }
+            i++;
         }
         return max > count ? max : count;
     }
