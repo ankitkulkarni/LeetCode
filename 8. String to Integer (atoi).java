@@ -8,7 +8,7 @@ public class Solution {
         while(i < length && str.charAt(i) == ' '){
             i++;
         }
-        if(i < str.length() && (str.charAt(i) == '+' || str.charAt(i) == '-')){
+        if(i < length && (str.charAt(i) == '+' || str.charAt(i) == '-')){
             sign = str.charAt(i++) == '+' ? 1 : -1;
         }
         while(i < length && str.charAt(i) >= '0' && str.charAt(i) <= '9'){
